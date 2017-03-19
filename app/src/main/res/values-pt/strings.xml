@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meu Diário de Viagens</string>
+    <string name="action_settings">Configurações</string>
+    <string name="text_start">Planeje e memorize suas melhores viagens</string>
+
+    <string name="app_user">Usuário</string>
+    <string name="app_password">Senha</string>
+    <string name="action_login">Logar</string>
+    <string name="app_connected">Manter Conectado?</string>
+    <string name="action_about">Sobre</string>
+    <string name="action_exit">Sair</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+
+</resources>
