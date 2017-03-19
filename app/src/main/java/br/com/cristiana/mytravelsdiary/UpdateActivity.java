@@ -3,6 +3,7 @@ package br.com.cristiana.mytravelsdiary;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,28 +47,74 @@ public class UpdateActivity extends AppCompatActivity {
 
     public  void update(View v){
 
-        try {
-            TravelDAO dao = new TravelDAO(this);
+        boolean error = validation();
 
-            travel.setDestiny(tilDestinyU.getText().toString());
-            travel.setDays(tilDaysU.getText().toString());
-            travel.setValue(tilValueU.getText().toString());
-            travel.setDepartureDate(tilDepartureDateU.getText().toString());
-            travel.setReturnDate(tilReturnDateU.getText().toString());
-            travel.setHotel(tilHotelU.getText().toString());
-            travel.setTouristsHotspots(tilTouristHotspotsU.getText().toString());
+        if (error){
+            return;
+        }else {
 
-            dao.updateTravel(travel);
+            try {
+                TravelDAO dao = new TravelDAO(this);
 
-            Toast.makeText(this, getString(R.string.message_update), Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+                travel.setDestiny(tilDestinyU.getText().toString());
+                travel.setDays(tilDaysU.getText().toString());
+                travel.setValue(tilValueU.getText().toString());
+                travel.setDepartureDate(tilDepartureDateU.getText().toString());
+                travel.setReturnDate(tilReturnDateU.getText().toString());
+                travel.setHotel(tilHotelU.getText().toString());
+                travel.setTouristsHotspots(tilTouristHotspotsU.getText().toString());
 
-            finish();
+                dao.updateTravel(travel);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                Toast.makeText(this, getString(R.string.message_update), Toast.LENGTH_LONG).show();
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+
+                finish();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    private boolean validation(){
+
+        boolean erro = false;
+
+        String destiny = tilDestinyU.getText().toString();
+        String days = tilDaysU.getText().toString();
+        String value = tilValueU.getText().toString();
+        String departureDate = tilDepartureDateU.getText().toString();
+        String returnDate = tilReturnDateU.getText().toString();
+        String hotel = tilHotelU.getText().toString();
+        String touristHotspots = tilTouristHotspotsU.getText().toString();
+
+
+        if(TextUtils.isEmpty(destiny)) {
+            tilDestinyU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(days)) {
+            tilDaysU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(value)) {
+            tilValueU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(departureDate)) {
+            tilDepartureDateU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(returnDate)) {
+            tilReturnDateU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(hotel)) {
+            tilHotelU.setError(getString(R.string.app_null));
+            erro = true;
+        } else if(TextUtils.isEmpty(touristHotspots)) {
+            tilTouristHotspotsU.setError(getString(R.string.app_null));
+            erro = true;
+        }
+
+        return erro;
     }
 
 }
