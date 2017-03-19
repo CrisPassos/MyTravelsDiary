@@ -106,6 +106,8 @@
     <string name="update_travel">Update Travel</string>
     <string name="action_update">Update</string>
 
+    <string name="app_null">Not Null</string>
+
     <string name="message_create">New Travel Create with Success</string>
     <string name="message_update"> Travel Update with Success</string>
 

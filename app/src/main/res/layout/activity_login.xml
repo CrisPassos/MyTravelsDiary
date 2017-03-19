@@ -32,7 +32,8 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="@string/app_user"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/edtUser"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -45,7 +46,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="@string/app_password"
-            android:id="@+id/editText"
+            android:id="@+id/edtPassword"
             android:layout_marginTop="5dp"
             android:inputType="textPassword"
             android:layout_gravity="center_horizontal"/>

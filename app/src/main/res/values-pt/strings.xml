@@ -11,9 +11,27 @@
     <string name="action_about">Sobre</string>
     <string name="action_exit">Sair</string>
 
+    <string name="title_activity_settings">Configurações</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="message_create">Nova Viagem Cadastrada com Sucesso</string>
+    <string name="message_update">Viagem Atualizada com Sucesso</string>
 
+    <string name="action_copyright">Copyright Cristiana Passos</string>
+    <string name="action_version">Versão 1.7.0</string>
+    <string name="action_insert">Nova Viagem</string>
+    <string name="insert_travel">Criar Nova Viagem</string>
+    <string name="app_destiny">Destino</string>
+    <string name="app_days">Dias</string>
+    <string name="app_value">Valor Gasto</string>
+    <string name="app_departureDate">Data de Partida</string>
+    <string name="app_returnDate">Data de Retorno</string>
+    <string name="app_hotel">Hotel</string>
+    <string name="app_touristHotspots">Pontos Turisticos</string>
+    <string name="action_create">Criar</string>
+
+    <string name="app_null">Campo não pode ser vazio</string>
 
 </resources>

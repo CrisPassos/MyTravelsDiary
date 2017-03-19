@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import java.util.List;
 
@@ -22,9 +25,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 
     public void logar(View v){
+        EditText edtUser = (EditText) findViewById(R.id.edtUser);
+        EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
+
         String usuario = ((TextInputLayout) findViewById(R.id.tilUser)).getEditText()
                 .getText().toString();
         String password = ((TextInputLayout) findViewById(tilPassword)).getEditText()
@@ -40,12 +47,14 @@ public class LoginActivity extends AppCompatActivity {
             if(checkBox.isChecked()) {
                 savePreferences(usuario, password, checkBox.isChecked());
                 connect();
+            } else {
+                openWindow();
             }
         }else{
-           //animacao = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.splash);
-            //edtLogin.startAnimation(animacao);
-            //edtSenha.startAnimation(animacao);
-        }
+            Animation animacao = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.error);
+            edtUser.startAnimation(animacao);
+            edtPassword.startAnimation(animacao);
+         }
     }
 
     private void connect(){

@@ -10,6 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:background="@drawable/fundo"
     tools:context="br.com.cristiana.mytravelsdiary.AboutActivity">
 
     <ImageView
@@ -19,20 +20,20 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="70dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="27dp"
+        android:layout_gravity="center"
         android:id="@+id/imageView3" />
 
     <TextView
         android:text="@string/action_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtVersion" />
+        android:id="@+id/txtVersion"
+        android:layout_gravity="center"/>/
 
     <TextView
         android:text="@string/action_copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtCopyright" />
+        android:id="@+id/txtCopyright"
+        android:layout_gravity="center"/>
 </LinearLayout>

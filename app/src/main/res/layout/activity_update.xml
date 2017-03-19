@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/app_destiny"
-                android:id="@+id/tilDestinyU"/>
+                android:id="@+id/tilDestinyU"
+                android:maxLength="30"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/app_departureDate"
                 android:inputType="date"
-                android:id="@+id/tilDepartureDateU"/>
+                android:id="@+id/tilDepartureDateU"
+                android:maxLength="11"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -91,7 +93,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/app_returnDate"
                 android:inputType="date"
-                android:id="@+id/tilReturnDateU"/>
+                android:id="@+id/tilReturnDateU"
+                android:maxLength="11"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -104,7 +107,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/app_hotel"
-                android:id="@+id/tilHotelU"/>
+                android:id="@+id/tilHotelU"
+                android:maxLength="30"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +120,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/app_touristHotspots"
-                android:id="@+id/tilTouristHotspotsU"/>
+                android:id="@+id/tilTouristHotspotsU"
+                android:maxLength="30"/>
 
         </android.support.design.widget.TextInputLayout>
 
