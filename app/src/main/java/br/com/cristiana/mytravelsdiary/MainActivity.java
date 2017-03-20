@@ -2,6 +2,7 @@ package br.com.cristiana.mytravelsdiary;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Process;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity
 
     private RecyclerView rvTravel;
     private TravelListAdapter adapter;
-
+    TravelDAO dao = new TravelDAO(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,8 @@ public class MainActivity extends AppCompatActivity
             Intent i = new Intent(this, AboutActivity.class);
             startActivity(i);
         } else if (id == R.id.exit) {
+            finish();
+            onDestroy();
 
         }
 
@@ -105,10 +108,11 @@ public class MainActivity extends AppCompatActivity
         rvTravel.setItemAnimator(new DefaultItemAnimator());
         rvTravel.setHasFixedSize(true);
 
-        TravelDAO dao = new TravelDAO(this);
+
         List<Travel> travels = dao.getAll();
 
         adapter = new TravelListAdapter(this, travels, onClickListener());
+
         rvTravel.setAdapter(adapter);
     }
 
@@ -120,10 +124,13 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, UpdateActivity.class);
                 i.putExtra(Constantes.KEY_TRAVEL, adapter.getItem(position));
                 startActivity(i);
-
             }
         };
     }
 
-
+    @Override
+    protected void onDestroy() {
+        Process.killProcess(android.os.Process.myPid());
+        super.onDestroy();
+    }
 }

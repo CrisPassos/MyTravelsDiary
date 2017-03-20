@@ -1,10 +1,12 @@
 package br.com.cristiana.mytravelsdiary;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ public class UpdateActivity extends AppCompatActivity {
 
     TextView tilDestinyU, tilDaysU, tilValueU, tilDepartureDateU, tilReturnDateU,  tilHotelU, tilTouristHotspotsU;
     Travel travel = new Travel();
+    Dialog dialogExclusao;
+    TravelDAO dao = new TravelDAO(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +71,38 @@ public class UpdateActivity extends AppCompatActivity {
                 dao.updateTravel(travel);
 
                 Toast.makeText(this, getString(R.string.message_update), Toast.LENGTH_LONG).show();
+                finish();
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
-
-                finish();
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void remove(View v){
+
+        dialogExclusao = new Dialog(this);
+        dialogExclusao.setContentView(R.layout.delete_dialog);
+        Button button = (Button) dialogExclusao.findViewById(R.id.btnCancelar);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                try {
+                    dao.delete(travel);
+                    Toast.makeText(UpdateActivity.this, getString(R.string.app_delete_final), Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    dialogExclusao.dismiss();
+                } catch (Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        dialogExclusao.show();
     }
 
     private boolean validation(){

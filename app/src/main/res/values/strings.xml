@@ -107,9 +107,14 @@
     <string name="action_update">Update</string>
 
     <string name="app_null">Not Null</string>
+    <string name="app_delete_msg">Do you want to delete this item?</string>
+    <string name="app_delete">Delete</string>
+    <string name="app_close">Close</string>
 
     <string name="message_create">New Travel Create with Success</string>
     <string name="message_update"> Travel Update with Success</string>
+
+    <string name="app_delete_final">Travel remove with Success</string>
 
 
 </resources>

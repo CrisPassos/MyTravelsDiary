@@ -69,17 +69,6 @@
                 android:padding="16dp"
                 android:text="@string/app_hotel" />
 
-            <Button
-                android:id="@+id/tv_remove"
-                android:layout_width="37dp"
-                android:layout_height="30dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:padding="16dp"
-                android:background="@mipmap/ic_remove"
-                android:onClick="remove"/>
-
-
         </LinearLayout>
 
     </LinearLayout>

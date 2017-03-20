@@ -34,4 +34,9 @@
 
     <string name="app_null">Campo não pode ser vazio</string>
 
+    <string name="app_delete_msg">Deseja Deletar este Item?</string>
+    <string name="app_delete">Deletar</string>
+    <string name="app_close">Fechar</string>
+    <string name="app_delete_final">Item excluído com sucesso</string>
+
 </resources>
